@@ -57,6 +57,8 @@
          (org-link-instagram--build-uri
           path)))
     (pcase backend
+      (`md
+       (format "[%s](%s)" (or desc uri) uri))
       (`html
        (format "<a href=\"%s\">%s</a>" uri (or desc uri)))
       (`latex
